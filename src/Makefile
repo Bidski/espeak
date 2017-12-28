@@ -1,5 +1,7 @@
 # remove -fno-exceptions  if it causes problems with stdio library on some platforms (ARM)
 
+SRC_DIR=.
+
 DATADIR=/usr/share/espeak-data
 
 PREFIX=/usr
@@ -150,5 +152,5 @@ install: all
 	# Install development headers
 	$(INSTALL) -pm 644 speak_lib.h $(DESTDIR)$(INCDIR)
 	# Install data files
-	cp -prf ../espeak-data/* $(DESTDIR)$(DATADIR)
+	cp -prf $(SRC_DIR)/../espeak-data/* $(DESTDIR)$(DATADIR)
 
